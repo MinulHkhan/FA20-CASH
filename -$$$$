@@ -1,0 +1,23 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        String s;
+        float dollars = -1;
+        while (dollars < 0) {
+            System.out.print("Change Owed: ");
+            s = input.nextLine();
+            try {
+                dollars = Float.parseFloat(s);
+            } catch (NumberFormatException ex) {
+                dollars = -1;
+            }
+        }
+        int cents = Math.round(dollars * 100);
+        System.out.println(cents);
+    }
+}
